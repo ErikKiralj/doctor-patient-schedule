@@ -1,0 +1,252 @@
+.jumbotron {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  color: blue;
+  font-weight: bold;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: 0.25rem;
+}
+
+.mojaklasa {
+  width: 700px;
+  margin: auto;
+}
+
+.alert-poruka {
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  right: 20px;
+}
+
+.table-h {
+  color: black;
+  font-size: 9px;
+  font-weight: bold;
+  height: 130px;
+  min-width: 45px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table-h p {
+  margin: auto auto;
+}
+
+.input-field {
+  width: calc(100% - 5px);
+  height: 25px;
+  text-align: center;
+  margin: 1px;
+  border: none;
+  padding: 0;
+}
+
+.table-one-two {
+  font-size: 12px;
+  height: 15px;
+  padding: 1px;
+  text-align: center;
+}
+
+.weekend {
+  background-color: gray;
+  color: white;
+  padding: 0;
+}
+
+.signature {
+  width: 300px;
+  border-bottom: 1px solid black;
+  height: 30px;
+}
+
+@page {
+  size: landscape;
+  margin: 25mm 25mm 25mm 25mm;
+}
+
+.vertical-text {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  text-align: center;
+  vertical-align: middle;
+}
+
+@media print {
+  #printPageButton {
+    display: none;
+  }
+}
+
+@media print {
+@page {
+    size: landscape;
+    margin: 0;
+}
+
+  .weekend {
+    background-color: gray;
+    color: white;
+    padding: 0;
+  }
+
+  html,
+  body {
+    width: 205mm;
+    height: 182mm;
+    font-size: 8px;
+    background: #FFF;
+    overflow: visible;
+  }
+
+  body {
+    padding-top: 5mm;
+    padding-left: 5mm;
+  }
+
+  .input-field {
+    width: calc(100% - 5px);
+    height: 10px;
+    text-align: center;
+    padding: 0;
+  }
+
+  .table-one-two {
+    font-size: 10px;
+    height: 10px;
+    padding: 1px;
+    text-align: center;
+  }
+
+  .container {
+    margin: 5px;
+  }
+
+  select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: none;
+  }
+
+  input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: none;
+  }
+
+  table {
+    border: 1px solid black;
+  }
+
+  td {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    min-width: 40px;
+    padding: 0;
+  }
+}
+
+.header-text {
+  display: inline-block;
+  justify-content: space-between;
+}
+
+td {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  min-width: 40px;
+  padding: 0;
+}
+
+.year-box {
+  width: 50px;
+  text-align: center;
+}
+
+.company-box {
+  width: 75px;
+  text-align: center;
+}
+
+.employee-box {
+  min-width: auto;
+  text-align: center;
+}
+
+table {
+  border: 1px solid black;
+}
+
+tr:has(td.weekend) {
+  color: red;
+}
+
+.item1 {
+  grid-area: header;
+}
+
+.item2 {
+  grid-area: menu;
+}
+
+.item3 {
+  grid-area: main;
+}
+
+.item4 {
+  grid-area: right;
+}
+
+.item5 {
+  grid-area: footer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "header header header header header header" "menu main main main right right" "menu footer footer footer footer footer";
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
