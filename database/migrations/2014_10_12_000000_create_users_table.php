@@ -26,7 +26,6 @@ class CreateUsersTable extends Migration
             $table->string('zip_code');
             $table->string('address');
             $table->string('city');
-            $table->rememberToken();
         });
     }
 

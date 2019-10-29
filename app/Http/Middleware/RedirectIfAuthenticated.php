@@ -17,7 +17,15 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
+        if (Auth::guard('admin')->user()==true) {
+            return redirect('/admin/show_doc');
+        }
+
+        if (Auth::guard('doctor')->user()==true) {
+            return redirect('/dlogin');
+        }
+
+        if (Auth::guard('web')->user()==true) {
             return redirect('/home');
         }
 

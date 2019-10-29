@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
-    public function doctor() {
+   
+    public function appointment() {
+        return $this->hasMany('App\Appointment');
+    }
 
-        return $this->belongsTo('App\Doctor');
+    public function service() {
+        return $this->belongsTo('App\Service');
     }
 
     public $timestamps = false;

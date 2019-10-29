@@ -2,52 +2,46 @@
 
 @section('content')
 
+<div style="text-align:center;">
 <h3>Online naručivanje pacijenata</h3>
+<br>
 
-    <div class="grid-container">
+@if(count($doctors)!=0)
+    <div class="card-deck">
 
-        @if(Auth::check())
-            <div class="item2">
-                <h3>{{$user->name}}</h3>
-                <h6>OIB: {{$user->oib}}</h6>
-                <h6>MBO: {{$user->mbo}}</h6>
-                <h6>Email: {{$user->email}}</h6>
-                <h6>Spol: {{$user->gender}}</h6>
-                <h6>Datum rođenja: {{$user->date_of_birth}}</h6>
-                <h6>Broj telefona: {{$user->phone_number}}</h6>
-                <h6>Poštanski broj: {{$user->zip_code}}</h6>
-                <h6>Adresa: {{$user->address}}</h6>
-                <h6>Grad: {{$user->city}}</h6>
-            </div>
-        @else
-
-        @endif
-
-        
         @foreach($doctors as $doctor)
             <form  method="POST" action="/schedule">
 
                         {{ csrf_field() }}
-                <div>
-                    <h3>{{$doctor->name}}</h3>
-                    <h6>Email: {{$doctor->email}}</h6>
-                    <h6>Broj telefona: {{$doctor->phone_number}}</h6>
-                    <h6>Specijalizacija: {{$doctor->spec}}</h6>
-                    <h6>Naziv ordinacije: {{$doctor->practise_name}}</h6>
-                    <h6>Adresa ordinacije: {{$doctor->practise_address}}</h6>
-                    <h6>Poštanski broj: {{$doctor->zip_code}}</h6>
-                    <h6>Grad: {{$doctor->city}}</h6>
-
-                    <input type="hidden" name="doctor" id="doctor" value="{{$doctor->id}}">
-
-                    <div>
-                        <div>
-                            <button type="submit" class="btn btn-primary">Naruči se</button>
-                        </div>
+                <div class="border-dark card text-black bg-primary mb-3">
+                    <div class="card-body text-white">
+                        <h3>{{$doctor->name}}</h3>
                     </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Email: {{$doctor->email}}</li>
+                        <li class="list-group-item">Broj telefona: {{$doctor->phone_number}}</li>
+                        <li class="list-group-item">Specijalizacija: {{$doctor->spec}}</li>
+                        <li class="list-group-item">Naziv ordinacije: {{$doctor->practise_name}}</li>
+                        <li class="list-group-item">Adresa ordinacije: {{$doctor->practise_address}}</li>
+                        <li class="list-group-item">Poštanski broj: {{$doctor->zip_code}}</li>
+                        <li class="list-group-item">Grad: {{$doctor->city}}</li>
+                    
+                    <input type="hidden" name="doctor" id="doctor" value="{{$doctor->id}}">
+                        <div style="text-align:center; width:100%">
+                            <button style="text-align:center; width:100%" type="submit" class="btn btn-primary">Naruči se</button>
+                        </div>
+                    </ul>
                 
                 </div>
             </form>
         @endforeach
+        </div>
+
+        @else
+            <h6>Ne postoji rezultat za pretragu, povratak <a href="http://dipl.local/home">početnu</a> stranicu.</h6>
+        @endif
+         </div>
 
 @endsection
+
+@include('layouts.errors')

@@ -28,7 +28,10 @@ class SessionsController extends Controller
 
         auth()->logout();
         Auth::guard('doctor')->logout();
-        return view('sessions.create');
+        Auth::guard('admin')->logout();
+        //return view('home.index');
+
+        return redirect()->route('welcome');
         
     }
 
@@ -41,7 +44,7 @@ class SessionsController extends Controller
         
         $user = Auth::user();
 
-        return view('welcome', compact('user'));
+        return redirect()->route('userHome');
         
     }
 }

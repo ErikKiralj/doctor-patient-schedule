@@ -36,7 +36,7 @@ class RegistrationController extends Controller
             'name.required' => 'Ime i prezime je obavezno.',
             'oib.required' => 'OIB je obavezan.',
             'mbo.required' => 'MBO je obavezan.',
-            'email.required' => 'Neispravan format e-mail adrese.',
+            'email.required' => 'E-mail adresa je obavezna.',
             'password.required' => 'Lozinka je obavezna.',
             'password.confirmed' => 'Ponovljena lozinka ne odgovara prethodno unesenoj.',
             'gender.required' => 'Spol je obavezan.',
@@ -66,11 +66,9 @@ class RegistrationController extends Controller
 
         auth()->login($user);
 
-        Mail::to($user)->send(new Welcome($user));
-
         session()->flash('message', 'Hvala na registraciji!');
 
-        return view('welcome', compact('user'));
+        return redirect()->route('userHome');
 
 }
 }

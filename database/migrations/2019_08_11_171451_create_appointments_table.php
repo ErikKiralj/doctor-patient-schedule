@@ -17,7 +17,11 @@ class CreateAppointmentsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->integer('doctor_id');
-            $table->integer('job_id');
+            $table->integer('service_id');
+            $table->date('date');
+            $table->char('start');
+            $table->char('end');
+            $table->integer('duration');
             $table->string('description');
             $table->string('diagnose')->nullable();
             $table->string('status')->default(1);

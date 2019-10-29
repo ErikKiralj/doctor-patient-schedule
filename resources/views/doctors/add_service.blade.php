@@ -2,7 +2,7 @@
 
 @section('content')
 
-        <form method="POST" action="/service">
+        <form method="POST" action="/service_add">
 
                 {{ csrf_field() }}
 

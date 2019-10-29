@@ -162,6 +162,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         'Jenssegers\Date\DateServiceProvider',
+        Cornford\Googlmapper\MapperServiceProvider::class,
+        Spatie\Geocoder\GeocoderServiceProvider::class,
+        
         
         
 
@@ -232,7 +235,9 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Input' => Illuminate\Support\Facades\Input::class,
         'Date' => Jenssegers\Date\Date::class,
-
+        'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
+        'Geocoder' => Spatie\Geocoder\Facades\Geocoder::class,
+        'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
     ],
 
 ];

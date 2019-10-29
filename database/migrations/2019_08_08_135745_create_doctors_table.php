@@ -24,7 +24,6 @@ class CreateDoctorsTable extends Migration
             $table->string('practise_address');
             $table->string('zip_code');
             $table->string('city');
-            $table->rememberToken();
         });
     }
 

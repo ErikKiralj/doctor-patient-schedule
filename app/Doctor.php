@@ -42,8 +42,15 @@ class Doctor extends Authenticatable
         //'email_verified_at' => 'datetime',
     ];
 
-    public function service() {
+    public function appointment() {
+        return $this->hasMany('App\Appointment');
+    }
 
+    public function doctor() {
+        return $this->hasMany('App\Doctor');
+    }
+
+    public function service() {
         return $this->hasMany('App\Service');
     }
 }
